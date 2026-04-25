@@ -1,0 +1,10 @@
+{
+  "name": "arca-dino-racing",
+  "version": "1.0.0",
+  "description": "Arca Dino Racing Game - Petualangan Arca di dunia dinosaurus",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build needed'"
+  }
+}

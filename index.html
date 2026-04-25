@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCA DINO RACING 🦖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #1a4d2e 0%, #2d5016 100%);
+            font-family: 'Arial Black', sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #gameContainer {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            height: 600px;
+            background: #87CEEB;
+            border: 5px solid #8B4513;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        canvas {
+            display: block;
+        }
+        #startScreen, #gameOverScreen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            z-index: 10;
+        }
+        #gameOverScreen {
+            display: none;
+        }
+        h1 {
+            font-size: 48px;
+            color: #FFD700;
+            text-shadow: 3px 3px 6px #000;
+            margin-bottom: 20px;
+        }
+        .btn {
+            padding: 15px 40px;
+            font-size: 24px;
+            background: #FF6B35;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+            background: #FF8C42;
+        }
+        #score {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: white;
+            text-shadow: 2px 2px 4px #000;
+            z-index: 5;
+        }
+        #instructions {
+            font-size: 18px;
+            margin-top: 20px;
+            text-align: center;
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas"></canvas>
+        <div id="score">Score: 0</div>
+        
+        <div id="startScreen">
+            <h1>🏁 ARCA DINO RACING 🦖</h1>
+            <p id="instructions">
+                Gunakan ↑ untuk lompat<br>
+                Hindari dinosaurus dan rintangan!
+            </p>
+            <button class="btn" onclick="startGame()">MULAI BALAPAN!</button>
+        </div>
+        
+        <div id="gameOverScreen">
+            <h1>GAME OVER!</h1>
+            <p id="finalScore" style="font-size: 32px; margin: 20px;">Score: 0</p>
+            <button class="btn" onclick="restartGame()">MAIN LAGI</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
